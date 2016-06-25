@@ -16,7 +16,6 @@ body {
     background: rgba(228, 228, 228, 0.31)
 }
 .layout{
-    width: 1000px;
     margin: 0 auto;
     background: white;
 }
@@ -138,7 +137,7 @@ body {
     padding: 10px 0px 0px;
 }
 .quantity input {
-    width: 20px;
+    width: 40px;
 }
 .request {
     font-size: 16px;
