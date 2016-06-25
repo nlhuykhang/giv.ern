@@ -1,1 +1,36 @@
 /* CSS declarations go here */
+.header-background {
+    height: 250px;
+    position: relative;
+    background-image: url('/img/hands.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mask {
+    top: 0;
+    position: absolute;
+    height: 251px;
+    opacity: 0.4;
+    width: 100%;
+    background: #834d9b;
+    background: -webkit-linear-gradient(to left, #834d9b , #d04ed6 );
+    background: linear-gradient(to left, #834d9b , #d04ed6 );
+}
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    margin: 0px 40px;
+}
+.nav-items {
+    display: inline-block;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0px 25px 2px 0px;
+    border-bottom: transparent 4px solid;
+}
+.nav-items:hover{
+    cursor: pointer;
+    border-bottom: white 4px solid;
+}
