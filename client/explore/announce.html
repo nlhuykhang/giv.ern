@@ -1,0 +1,61 @@
+<template name="announce">
+    <div class="announce">
+        <div class="main-info">
+            <div class="avatar">
+                <img src="img/hands.jpg" alt="Nguyen">
+            </div>
+            <div class="name">Nguyen Ho</div>
+            <div class="info">12h 45, 57 Le Thi Hong Gam</div>
+            <div class="post">
+                fuck you
+                <div class="edit-icon">Edit</div>
+            </div>
+            <div class="button-show-more"></div>
+        </div>
+        <div class="detail-info">
+            {{> item}}
+        </div>
+    </div>
+</template>
+<template name="item">
+    <div class="row item-container">
+        <div class="col-md-2 giving">a</div>
+        <div class="col-md-6">
+            {{> carousel }}
+        </div>
+        <div class="col-md-4 info">
+            <div class="item-title">Ban gay 4 chan</div>
+            <div class="item-description">Description blah blah</div>
+            <div class="quantity">
+                Quantity&nbsp;&nbsp;<input type="number" />
+            </div>
+            <div class="request">
+                Request&nbsp;&nbsp;
+                <div class="user-request">
+                    <img src="img/hands.jpg" alt="Nguyen">
+                </div>
+                <div class="user-request">
+                    <img src="img/hands.jpg" alt="Nguyen">
+                </div>
+                <div class="user-request">
+                    <img src="img/hands.jpg" alt="Nguyen">
+                </div>
+                <div class="user-request">
+                    <img src="img/hands.jpg" alt="Nguyen">
+                </div>
+                <div class="user-request">
+                    <img src="img/hands.jpg" alt="Nguyen">
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="carousel">
+    <div id="carousel">
+        <div><img src="img/hands.jpg" width="200px" /></div>
+        <div><img src="img/hands.jpg" width="200px" /></div>
+        <div><img src="img/hands.jpg" width="200px" /></div>
+        <div><img src="img/hands.jpg" width="200px" /></div>
+        <div><img src="img/hands.jpg" width="200px" /></div>
+    </div>
+</template>

@@ -1,0 +1,197 @@
+/* CSS declarations go here */
+@font-face {
+    font-family: 'proxima-bold';
+    src: url('font/Mark Simonson - Proxima Nova Bold.otf')
+}
+@font-face {
+    font-family: 'proxima-light';
+    src: url('font/Mark Simonson - Proxima Nova Light.otf')
+}
+@font-face {
+    font-family: 'proxima-regular';
+    src: url('font/Mark Simonson - Proxima Nova Regular.otf')
+}
+body {
+    font-family: 'proxima-regular';
+    background: rgba(228, 228, 228, 0.31)
+}
+.layout{
+    width: 1000px;
+    margin: 0 auto;
+    background: white;
+}
+.header-background {
+    height: 250px;
+    position: relative;
+    background-image: url('/img/hands.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -150px;
+}
+.mask {
+    top: 0;
+    position: absolute;
+    height: 251px;
+    opacity: 0.4;
+    width: 100%;
+    background: #834d9b;
+    background: -webkit-linear-gradient(to left, #834d9b , #d04ed6 );
+    background: linear-gradient(to left, #834d9b , #d04ed6 );
+}
+.nav-bar {
+    position: absolute;
+    bottom: 0;
+    margin: 0px 40px;
+}
+.nav-items {
+    display: inline-block;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 0px 25px 2px 0px;
+    border-bottom: transparent 4px solid;
+}
+.nav-items:hover{
+    cursor: pointer;
+    border-bottom: white 4px solid;
+}.announce{
+     text-align: center;
+     margin: 100px 20px;
+     background: yellow;
+     border-radius: 12px;
+ }
+ .post {
+     position: relative;
+     text-align: left;
+     margin: 0px 20px;
+     padding: 25px 30px;
+     border-radius: 8px;
+     font-size: 20px;
+     background: white;
+ }
+ .edit-icon {
+     position: absolute;
+     top: -25px;
+     right: 11px;
+ }
+ .info{
+     text-align: left;
+     padding: 15px 35px;
+     font-size: 10px;
+ }
+ .avatar{
+     width: 70px;
+     height: 70px;
+     margin: 0 auto;
+     position: relative;
+ }
+ .avatar img {
+     width: 100%;
+     height: 100%;
+     border-radius: 50%;
+     position: absolute;
+     top: -26px;
+     left: 0px;
+ }
+ .name {
+     font-size: 17px;
+     font-weight: bold;
+     margin: -20px;
+ }
+.main-info {
+    padding: 0px 0px 30px;
+    position: relative;
+}
+.detail-info {
+    background: orange;
+}
+.more-info{
+    background: yellow;
+    border-radius: 0px 0px 12px 12px;
+    padding: 13px;
+}
+.row:hover .col-md-2{
+    display: block;
+}
+.col-md-2 {
+    display: none;
+}
+.giving {
+    background: rebeccapurple;
+    height: 100px;
+}
+.row {
+    margin: 0;
+}
+.item-title {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'proxima-bold';
+}
+.item-description {
+    font-size: 16px;
+    padding: 10px 0px 0px;
+}
+.quantity {
+    font-size: 16px;
+    padding: 10px 0px 0px;
+}
+.quantity input {
+    width: 20px;
+}
+.request {
+    font-size: 16px;
+    padding: 10px 0px 0px;
+}
+.get-info-btn {
+    color: black;
+}
+.slick-prev:before, .slick-next:before {
+    color:    silver;
+}
+.user-request img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.user-request {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+.get-info-btn {
+    color: black;
+    background: white;
+    display: block;
+    padding: 10px;
+    border-radius: 25px;
+    width: 150px;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+#carousel {
+    padding: 0px 45px 0px;
+}
+#carousel img{
+    width: 100%;
+    height: auto;
+}
+#carousel .slick-slide{
+    padding: 2px;
+    height: 200px;
+}
+
+.item-container {
+    padding: 20px 0px;
+    position: relative;
+}
+.button-show-more {
+    width: 50px;
+    height: 50px;
+    background: gray;
+    position: absolute;
+    right: 31px;
+    bottom: -25px;
+    border-radius: 50%;
+}
