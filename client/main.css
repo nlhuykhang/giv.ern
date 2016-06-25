@@ -1,10 +1,15 @@
 /* CSS declarations go here */
+.layout{
+    width: 1000px;
+    margin: 0 auto;
+}
 .header-background {
     height: 250px;
     position: relative;
     background-image: url('/img/hands.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: -150px;
 }
 .mask {
     top: 0;
