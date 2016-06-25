@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$0")"
+
+usage() {
+  echo "Switchboard run script" >&2
+  echo "Usage: ./run [fixtures]" >&2
+  echo "Runs without fixtures by default" >&2
+  exit 1
+}
+
+if [[ "$#" != 0 ]]; then
+  if [[ "$1" == "fixtures" ]]; then
+    export LOAD_FIXTURES=true
+  fi
+fi
+
+set -x
+
+meteor
