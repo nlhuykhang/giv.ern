@@ -2,8 +2,10 @@
     <div class="announce">
         <div class="main-info giving-note">
             <div class="post">
-                fuck you
-                <div class="edit-icon">Edit</div>
+                <input type="text" class="custom-class">
+                <div class="edit-icon"
+                     data-toggle="modal" data-target="#editModal"
+                >Edit</div>
             </div>
             <div class="button-show-more"></div>
         </div>
@@ -11,7 +13,8 @@
             {{> itemOwner}}
         </div>
         <div class="more-info">
-            <div class="get-info-btn">give more </div>
+            <div class="get-info-btn"
+                 data-toggle="modal" data-target="#addModal">give more </div>
             <div class="get-info-btn"> just give </div>
         </div>
     </div>

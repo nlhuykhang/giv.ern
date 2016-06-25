@@ -105,6 +105,15 @@ body {
     height: 100%;
     border-radius: 50%;
 }
+.r-avatar {
+    height: 70px;
+    width: 70px;
+}
+.r-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
  .name {
      font-size: 17px;
      font-weight: bold;
@@ -227,6 +236,46 @@ body {
     padding: 40px;
 }
 .ts-container {
-    padding: 20px;
+    text-align: center;
+    margin: 100px 20px;
     background: yellow;
+    border-radius: 12px;
+    padding: 50px;
+}
+.ts-items {
+    margin: 20px 0px;
+    background: white;
+    padding: 40px;
+    height: 400px;
+}
+.ts-timeline {
+    margin: 20px 0px;
+    background: blue;
+    padding: 40px;
+    height: 400px;
+}
+.ts-item{
+    padding: 10px;
+    background: pink;
+    margin: 15px 0px;
+    border-radius: 10px;
+}
+.no-padding {
+    padding: 0;
+}
+.recent-action-message {
+    display: inline-block;
+    padding: 5px 20px;
+    background: white;
+    border-radius: 15px;
+}
+.recent-action {
+    display: inline-block;
+}
+.done {
+    background: red;
+}
+.custom-class{
+    width: 100%;
+    border: none;
 }
