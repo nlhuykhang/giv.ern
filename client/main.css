@@ -87,6 +87,11 @@ body {
      margin: 0 auto;
      position: relative;
  }
+ .t-avatar {
+     width: 70px;
+     height: 70px;
+     margin: 0 auto;
+ }
  .avatar img {
      width: 100%;
      height: 100%;
@@ -95,6 +100,11 @@ body {
      top: -26px;
      left: 0px;
  }
+.t-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
  .name {
      font-size: 17px;
      font-weight: bold;
@@ -175,8 +185,14 @@ body {
     width: 150px;
     text-transform: uppercase;
     font-size: 10px;
+    display: inline-block;
 }
-.carousel {
+.get-info-btn:hover {
+    color: white;
+    background: darkslategrey;
+    cursor: pointer;
+}
+#carousel {
     padding: 0px 45px 0px;
 }
 .carousel .test {
@@ -206,4 +222,11 @@ body {
     right: 31px;
     bottom: -25px;
     border-radius: 50%;
+}
+.giving-note {
+    padding: 40px;
+}
+.ts-container {
+    padding: 20px;
+    background: yellow;
 }
