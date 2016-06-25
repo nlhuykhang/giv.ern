@@ -33,3 +33,5 @@ kadira:blaze-layout
 
 twbs:bootstrap
 udondan:slick
+
+momentjs:moment

@@ -2,60 +2,68 @@
     <div class="announce">
         <div class="main-info">
             <div class="avatar">
-                <img src="img/hands.jpg" alt="Nguyen">
+                <img src="{{user.profile.avatar}}" alt="Nguyen">
             </div>
-            <div class="name">Nguyen Ho</div>
-            <div class="info">12h 45, 57 Le Thi Hong Gam</div>
+            <div class="name">{{user.profile.firstName}} {{user.profile.lastName}}</div>
+            <div class="info">{{info}}</div>
             <div class="post">
-                fuck you
+                {{content}}
                 <div class="edit-icon">Edit</div>
             </div>
             <div class="button-show-more"></div>
         </div>
-        <div class="detail-info">
+        <div class="detail-info hidden">
+          {{#each items}}
             {{> item}}
+          {{/each}}
+          {{#if cannotRequest}}
+            {{#unless isPoster}}
+              <div class="">
+                You already sent a request
+              </div>
+            {{/unless}}
+          {{else}}
+            <button class="request-btn" type="button" name="button">Request</button>
+          {{/if}}
         </div>
     </div>
 </template>
+
 <template name="item">
-    <div class="row item-container">
+    <div class="row item-container" data-id="{{_id}}">
         <div class="col-md-2 giving">a</div>
         <div class="col-md-6">
-            {{> carousel }}
+            {{!-- {{> carousel }} --}}
+            <div class="carousel">
+                <div class="test" style="background-image: url({{image}})">
+                </div>
+            </div>
         </div>
         <div class="col-md-4 info">
-            <div class="item-title">Ban gay 4 chan</div>
-            <div class="item-description">Description blah blah</div>
+            <div class="item-title">{{name}}</div>
+            <div class="item-description">{{desc}}</div>
             <div class="quantity">
-                Quantity&nbsp;&nbsp;<input type="number" />
+                Quantity&nbsp;&nbsp;
+                <input class="" type="number" value="1" min="0" max="{{curAmount}}"/>
             </div>
             <div class="request">
                 Request&nbsp;&nbsp;
-                <div class="user-request">
-                    <img src="img/hands.jpg" alt="Nguyen">
-                </div>
-                <div class="user-request">
-                    <img src="img/hands.jpg" alt="Nguyen">
-                </div>
-                <div class="user-request">
-                    <img src="img/hands.jpg" alt="Nguyen">
-                </div>
-                <div class="user-request">
-                    <img src="img/hands.jpg" alt="Nguyen">
-                </div>
-                <div class="user-request">
-                    <img src="img/hands.jpg" alt="Nguyen">
-                </div>
+                {{#each requestUsers}}
+                  <div class="user-request">
+                      <img src="{{profile.avatar}}" alt="{{profile.firstName}}">
+                  </div>
+                {{/each}}
             </div>
         </div>
     </div>
 </template>
+
 <template name="carousel">
-    <div id="carousel">
-        <div><img src="img/hands.jpg" width="200px" /></div>
-        <div><img src="img/hands.jpg" width="200px" /></div>
-        <div><img src="img/hands.jpg" width="200px" /></div>
-        <div><img src="img/hands.jpg" width="200px" /></div>
-        <div><img src="img/hands.jpg" width="200px" /></div>
+    <div class="carousel">
+        <div><img src="/img/hands.jpg" width="200px" /></div>
+        <div><img src="/img/hands.jpg" width="200px" /></div>
+        <div><img src="/img/hands.jpg" width="200px" /></div>
+        <div><img src="/img/hands.jpg" width="200px" /></div>
+        <div><img src="/img/hands.jpg" width="200px" /></div>
     </div>
 </template>

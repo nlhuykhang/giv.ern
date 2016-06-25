@@ -54,7 +54,9 @@ body {
 .nav-items:hover{
     cursor: pointer;
     border-bottom: white 4px solid;
-}.announce{
+}
+
+.announce{
      text-align: center;
      margin: 100px 20px;
      background: yellow;
@@ -110,9 +112,9 @@ body {
     border-radius: 0px 0px 12px 12px;
     padding: 13px;
 }
-.row:hover .col-md-2{
+/*.row:hover .col-md-2 {
     display: block;
-}
+}*/
 .col-md-2 {
     display: none;
 }
@@ -120,6 +122,11 @@ body {
     background: rebeccapurple;
     height: 100px;
 }
+
+.giving.selected {
+    display: block;
+}
+
 .row {
     margin: 0;
 }
@@ -169,14 +176,19 @@ body {
     text-transform: uppercase;
     font-size: 10px;
 }
-#carousel {
+.carousel {
     padding: 0px 45px 0px;
 }
-#carousel img{
-    width: 100%;
-    height: auto;
+.carousel .test {
+    height: 200px;
 }
-#carousel .slick-slide{
+.carousel img {
+    /*width: 100%;
+    height: auto;*/
+    width: auto;
+    height: 200px;
+}
+.carousel .slick-slide {
     padding: 2px;
     height: 200px;
 }
@@ -184,6 +196,7 @@ body {
 .item-container {
     padding: 20px 0px;
     position: relative;
+    height: 270px;
 }
 .button-show-more {
     width: 50px;
