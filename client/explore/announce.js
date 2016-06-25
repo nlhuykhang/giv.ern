@@ -16,8 +16,8 @@ Template.announce.helpers({
       _id: this.userId
     });
   },
-  info() {
-    return moment(this.createdAt).fromNow() + ', ' + this.location.address;
+  time() {
+    return moment(this.createdAt).format('hh:mm a - D MMMM');
   },
   items() {
     return Item.find({
@@ -125,7 +125,7 @@ Template.item.helpers({
 
 Template.item.events({
   'click .item-container': function(e, t) {
-    $(t.find('.giving')).toggleClass('selected');
+    $(t.find('.item-container')).toggleClass('selected');
   },
   'click .quantity input': function(e) {
     return false;

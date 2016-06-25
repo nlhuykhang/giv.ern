@@ -5,10 +5,21 @@
                 <img src="{{user.profile.avatar}}" alt="Nguyen">
             </div>
             <div class="name">{{user.profile.firstName}} {{user.profile.lastName}}</div>
-            <div class="info">{{info}}</div>
+            <div class="info">
+              <div class="time">
+                <img src="/img/clock-icon.svg" />
+                {{time}}
+              </div>
+              <div class="check-in">
+                <img src="/img/pin-icon.svg" />
+                {{location.address}}
+              </div>
+            </div>
             <div class="post">
                 {{content}}
-                <div class="edit-icon">Edit</div>
+                <div class="edit-icon">
+                  <img src="/img/edit-icon.svg" />
+                </div>
             </div>
             <div class="button-show-more"></div>
         </div>
@@ -31,7 +42,11 @@
 
 <template name="item">
     <div class="row item-container" data-id="{{_id}}">
-        <div class="col-md-2 giving">a</div>
+        <div class="col-md-2 giving">
+			<div class="hand-on">
+            	<img src="/img/hand-icon.svg" />
+	        </div>
+		</div>
         <div class="col-md-6">
             {{!-- {{> carousel }} --}}
             <div class="carousel">

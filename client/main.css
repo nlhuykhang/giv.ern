@@ -37,10 +37,24 @@ body {
     background: -webkit-linear-gradient(to left, #834d9b , #d04ed6 );
     background: linear-gradient(to left, #834d9b , #d04ed6 );
 }
+
+.logo img {
+  width: 145px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 60px auto;
+  z-index: 5;
+}
+.ex-container {
+  padding: 0 60px;
+}
 .nav-bar {
     position: absolute;
     bottom: 0;
-    margin: 0px 40px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
 }
 .nav-items {
     display: inline-block;
@@ -55,7 +69,9 @@ body {
     cursor: pointer;
     border-bottom: white 4px solid;
 }
-
+.navbar-items {
+  text-align: center;
+}
 .announce{
      text-align: center;
      margin: 100px 20px;
@@ -73,13 +89,33 @@ body {
  }
  .edit-icon {
      position: absolute;
-     top: -25px;
-     right: 11px;
+     top: -35px;
+     right: 4px;
+     width: 20px;
+ }
+ .main-info .info {
+   display: -webkit-box;
  }
  .info{
      text-align: left;
      padding: 15px 35px;
      font-size: 10px;
+ }
+ .info .time {
+   font-size: 13px;
+ }
+  .info .time img {
+   width: 30px;
+   vertical-align: bottom;
+   margin-right: 7px;
+ }
+ .info .check-in {
+   font-size: 13px;
+ }
+ .info .check-in img {
+   width: 20px;
+   vertical-align: bottom;
+   margin: 0 7px 0 15px;
  }
  .avatar{
      width: 70px;
@@ -120,7 +156,7 @@ body {
      margin: -20px;
  }
 .main-info {
-    padding: 0px 0px 30px;
+    padding: 0px 0px 60px;
     position: relative;
 }
 .detail-info {
@@ -131,21 +167,30 @@ body {
     border-radius: 0px 0px 12px 12px;
     padding: 13px;
 }
-/*.row:hover .col-md-2 {
-    display: block;
-}*/
-.col-md-2 {
-    display: none;
+.row.selected .giving{
+    width: 16.66667%;
+}
+.row.selected .giving .hand-on img {
+  left: 0;
 }
 .giving {
-    background: rebeccapurple;
-    height: 100px;
+    width: 0;
+    transition: all 0.5s ease;
 }
-
-.giving.selected {
-    display: block;
+.giving .hand-on {
+  background: rebeccapurple;
+  width: 100%;
+  padding: 128px 0 128px 33px;
+  position: absolute;
+  top: -40px;
+  left: -33px;
 }
-
+.giving .hand-on img {
+  width: 80px;
+  left: -85px;
+  position: relative;
+  transition: all 0.5s ease;
+}
 .row {
     margin: 0;
 }
@@ -164,6 +209,11 @@ body {
 }
 .quantity input {
     width: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    min-width: 75px;
 }
 .request {
     font-size: 16px;
@@ -219,9 +269,9 @@ body {
 }
 
 .item-container {
-    padding: 20px 0px;
+    padding: 40px 0 20px;
     position: relative;
-    height: 270px;
+    overflow: hidden;
 }
 .button-show-more {
     width: 50px;
