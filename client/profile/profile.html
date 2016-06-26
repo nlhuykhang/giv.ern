@@ -7,7 +7,7 @@
             <img src={{user.profile.avatar}} alt="" />
         </div>
         <div class="profile-name">{{user.profile.firstName}}&nbsp;{{user.profile.lastName}}</div>
-        <div class="row">
+        <div class="row social-point">
             <div class="col-md-4 border-right">
                 <div class="count">{{follow.thanks}}</div>
                 <div class="type">Thanks</div>
@@ -21,6 +21,17 @@
                 <div class="type">Following</div>
             </div>
         </div>
+        <div class="row social-network">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="group-social">
+              <img src="/img/logo-fb.svg" />
+              <img src="/img/logo-tw.svg" />
+              <img src="/img/logo-in.svg" />
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
         <div class="edit-btn"
              data-toggle="modal" data-target="#editProfile"
         >
@@ -31,7 +42,7 @@
         <div class="info-item">
             <div class="yellow-brick">
                 <div class="round-img">
-                    <img src="img/look-up.svg" alt="">
+                    <img src="img/profile-icon.svg" alt="">
                 </div>
             </div>
             <div class="info-content">
@@ -56,6 +67,35 @@
                     <li>Ban A da doi cai nay thanh cai kia</li>
                     <li>Ban A da doi cai nay thanh cai kia</li>
                 </ul>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="yellow-brick">
+                <div class="round-img">
+                    <img src="/img/look-up.svg" alt="">
+                </div>
+            </div>
+            <div class="info-content look-up">
+              <div class="row">
+                <div class="col-md-4">
+                  <label class="checkbox"><input type="checkbox" value="">Electric Devices</label>
+                  <label class="checkbox"><input type="checkbox" value="">Clothes</label>
+                  <label class="checkbox"><input type="checkbox" value="">Kitchen Stuffs</label>
+                  <label class="checkbox"><input type="checkbox" value="">Pet</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="checkbox"><input type="checkbox" value="">Food</label>
+                  <label class="checkbox"><input type="checkbox" value="">Beverage</label>
+                  <label class="checkbox"><input type="checkbox" value="">Book</label>
+                  <label class="checkbox"><input type="checkbox" value="">Cooking</label>
+                </div>
+                <div class="col-md-4">
+                  <label class="checkbox"><input type="checkbox" value="">Vehicle</label>
+                  <label class="checkbox"><input type="checkbox" value="">Beauticare</label>
+                  <label class="checkbox"><input type="checkbox" value="">Stationaries</label>
+                  <label class="checkbox"><input type="checkbox" value="">Technology</label>
+                </div>
+              </div>
             </div>
         </div>
     </div>
