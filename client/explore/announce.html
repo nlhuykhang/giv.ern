@@ -21,21 +21,25 @@
                   <img src="/img/edit-icon.svg" />
                 </div>
             </div>
-            <div class="button-show-more"></div>
+            <div class="group-button">
+              {{#if cannotRequest}}
+                {{#unless isPoster}}
+                  <div class="">
+                    You already sent a request
+                  </div>
+                {{/unless}}
+              {{else}}
+                <button class="request-btn" type="button" name="button">Request</button>
+              {{/if}}
+              <div class="button-show-more">
+                <img src="/img/more.svg" />
+              </div>
+            </div>
         </div>
         <div class="detail-info hidden">
           {{#each items}}
             {{> item}}
           {{/each}}
-          {{#if cannotRequest}}
-            {{#unless isPoster}}
-              <div class="">
-                You already sent a request
-              </div>
-            {{/unless}}
-          {{else}}
-            <button class="request-btn" type="button" name="button">Request</button>
-          {{/if}}
         </div>
     </div>
 </template>
