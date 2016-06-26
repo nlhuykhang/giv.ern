@@ -360,7 +360,7 @@ body {
 }
 .profile{
     position: relative;
-    background: yellow;
+    background: #fbd14b;
     margin: 40px 50px;
     padding: 10px;
     border-radius: 14px;
@@ -398,7 +398,7 @@ body {
     margin: 40px 50px;
 }
 .yellow-brick{
-    background: yellow;
+    background: #fbd14b;
     display: inline-block;
     width: 150px;
     border-radius: 12px 0px 0px 12px;
@@ -417,6 +417,7 @@ body {
 .info-item {
     height: 350px;
     margin-top: 30px;
+    background: #ececec;
 }
 .round-img img {
     width: 60px;
@@ -449,4 +450,33 @@ body {
     top: 9px;
     min-width: 20px;
     cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: white;
+    font-family: 'proxima-bold';
+    font-size: 20px;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+    font-family: 'proxima-bold';
+    font-size: 20px;
+}
+.right-side-custom{
+    margin-top: -24px;
+}
+.notification {
+    color: white;
+    width: 20px;
+    height: 20px;
+    background: red;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -32px;
+    right: 31px;
+}
+.right-side-custom .r-avatar{
+    position: relative;
 }
