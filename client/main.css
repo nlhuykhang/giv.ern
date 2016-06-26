@@ -75,7 +75,7 @@ body {
 .announce{
      text-align: center;
      margin: 100px 20px;
-     background: yellow;
+     background: #fbd14b;
      border-radius: 12px;
  }
  .post {
@@ -92,6 +92,20 @@ body {
      top: -35px;
      right: 4px;
      width: 20px;
+ }
+.main-info .group-button {
+  float: right;
+  display: -webkit-box;
+}
+ .main-info .group-button .request-btn {
+    height: 50px;
+    width: 120px;
+    margin: 20px 20px 00;
+    border-radius: 50px;
+    text-transform: uppercase;
+    background: #fff;
+    border: none;
+    color: #e3632d;
  }
  .main-info .info {
    display: -webkit-box;
@@ -157,11 +171,14 @@ body {
      margin: -20px;
  }
 .main-info {
-    padding: 0px 0px 60px;
+    padding: 0px 0px 90px;
     position: relative;
 }
-.detail-info {
+.detail-info .item-container {
     background: orange;
+}
+.detail-info .item-container:nth-child(even) {
+  background: yellow;
 }
 .more-info{
     background: yellow;
@@ -256,7 +273,12 @@ body {
     padding: 0px 45px 0px;
 }
 .carousel .test {
-    height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+  width: 190px;
+  height: 190px;
+  margin: 0 auto;
 }
 .carousel img {
     /*width: 100%;
@@ -276,12 +298,15 @@ body {
 }
 .button-show-more {
     width: 50px;
-    height: 50px;
-    background: gray;
-    position: absolute;
-    right: 31px;
-    bottom: -25px;
+    margin: 20px 20px 0 0;
     border-radius: 50%;
+    cursor: pointer;
+}
+.button-show-more img {
+  background: #e3632d;
+  padding: 16px 12px;
+  width: 50px;
+  border-radius: 50px;
 }
 .giving-note {
     padding: 40px;
