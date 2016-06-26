@@ -1,36 +1,53 @@
 <template name="givingItem">
-    <div class="announce">
-        <div class="main-info giving-note">
-            <div class="post">
-                <input type="text" class="custom-class">
-                <div class="edit-icon"
-                     data-toggle="modal" data-target="#editModal"
-                >Edit</div>
+  <div class="announce">
+      <div class="main-info">
+          <div class="info">
+            <div class="time">
+              <img src="/img/clock-icon.svg" />
+              {{time}}
             </div>
-            <div class="button-show-more"></div>
-        </div>
-        <div class="detail-info">
-            {{> itemOwner}}
-        </div>
-        <div class="more-info">
-            <div class="get-info-btn"
-                 data-toggle="modal" data-target="#addModal">give more </div>
-            <div class="get-info-btn"> just give </div>
-        </div>
-    </div>
+            <div class="check-in">
+              <img src="/img/pin-icon.svg" />
+              {{location.address}}
+            </div>
+            {{#if isDone}}
+            <div class="done">
+              Done
+            </div>
+            {{/if}}
+          </div>
+          <div class="post">
+              {{content}}
+              <div id="edit-post-status" class="edit-icon">
+                <img src="/img/edit-icon.svg" />
+              </div>
+          </div>
+          <div class="button-show-more"></div>
+      </div>
+      <div class="detail-info hidden">
+        {{#each items}}
+          {{> item}}
+        {{/each}}
+      </div>
+  </div>
+
 </template>
+
 <template name="itemOwner">
     <div class="row item-container">
         <div class="col-md-6">
-            {{> carousel }}
+            <div class="carousel">
+                <div class="test" style="background-image: url({{image}})">
+                </div>
+            </div>
         </div>
         <div class="col-md-4 info">
-            <div class="item-title">Ban gay 4 chan</div>
-            <div class="item-description">Description blah blah</div>
+            <div class="item-title">{{name}}</div>
+            <div class="item-description">{{desc}}</div>
             <div class="quantity">
-                Quantity&nbsp;&nbsp;<input type="number" />
+                Quantity&nbsp;&nbsp;{{amount}}
             </div>
-            <div class="request">
+            <!-- <div class="request">
                 Request&nbsp;&nbsp;
                 <div class="user-request">
                     <img src="img/hands.jpg" alt="Nguyen">
@@ -47,7 +64,7 @@
                 <div class="user-request">
                     <img src="img/hands.jpg" alt="Nguyen">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>

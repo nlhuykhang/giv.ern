@@ -1,12 +1,33 @@
 <template name="giving">
     <div class="ex-container">
-        {{> givingItem}}
-        {{> gaveItem}}
+      <div class="announce">
+          <div class="main-info giving-note">
+              <div class="post">
+                  <textarea id="new-post-text" class="custom-class" name="name" rows="4" cols="40" placeholder="Let give something"></textarea>
+                  <div class="edit-icon" data-toggle="modal" data-target="#editModal">Edit</div>
+              </div>
+          </div>
+          <div class="detail-info">
+            {{#each newItems}}
+              {{> itemOwner}}
+            {{/each}}
+          </div>
+          <div class="more-info">
+              <div class="get-info-btn"
+                   data-toggle="modal" data-target="#addModal">add item </div>
+              <div id="give-btn" class="get-info-btn">post </div>
+          </div>
+      </div>
+        <!-- {{> givingItem}} -->
+        {{#each posts}}
+          {{> givingItem}}
+        {{/each}}
         {{> addModal}}
         {{> editModal}}
         {{> editStatus}}
     </div>
 </template>
+
 <template name="addModal">
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -15,29 +36,53 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Add Item</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" name="name">
-                        </div>
-                        <div class="form-group">
-                            <label>Quantity</label><input  class="form-control" type="number" name="quantity">
-                        </div>
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" name="image" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form id="add-item-form">
+                  <div class="modal-body">
+                      <div class="row">
+                          <div class="form-group">
+                              <label>Name</label>
+                              <input class="form-control" type="text" name="name">
+                          </div>
+                          <div class="form-group">
+                              <label>Description</label>
+                              <input class="form-control" type="text" name="desc">
+                          </div>
+                          <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control" name="category">
+                              <option value="electronic">Electronic</option>
+                              <option value="clothing">Clothing</option>
+                              <option value="kitchenWare">KitchenWare</option>
+                              <option value="pet">Pet</option>
+                              <option value="instrument">Instrument</option>
+                              <option value="food">Food</option>
+                              <option value="book">Book</option>
+                              <option value="vehicle">Vehicle</option>
+                              <option value="houseWare">HouseWare</option>
+                              <option value="beverage">Beverage</option>
+                              <option value="beautyCare">BeautyCare</option>
+                              <option value="staionery">Staionery</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                              <label>Quantity</label><input  class="form-control" type="number" name="amount" min="1">
+                          </div>
+                          <div class="form-group">
+                              <label>Image</label>
+                              <input type="file" name="image" class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Add</button>
+                  </div>
+                </form>
             </div>
         </div>
     </div>
 </template>
+
 <template name="editModal">
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -46,48 +91,73 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input class="form-control" type="text" name="name">
-                        </div>
-                        <div class="form-group">
-                            <label>Quantity</label><input  class="form-control" type="number" name="quantity">
-                        </div>
-                        <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" name="image" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form id="edit-item-form">
+                  <div class="modal-body">
+                      <div class="row">
+                          <div class="form-group">
+                              <label>Name</label>
+                              <input class="form-control" type="text" name="name" value="{{item.name}}">
+                          </div>
+                          <div class="form-group">
+                              <label>Description</label>
+                              <input class="form-control" type="text" name="desc" value="{{item.desc}}">
+                          </div>
+                          <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control" name="category">
+                              <option {{selected 'electronic'}} value="electronic">Electronic</option>
+                              <option {{selected 'clothing'}} value="clothing">Clothing</option>
+                              <option {{selected 'kitchenWare'}} value="kitchenWare">KitchenWare</option>
+                              <option {{selected 'pet'}} value="pet">Pet</option>
+                              <option {{selected 'instrument'}} value="instrument">Instrument</option>
+                              <option {{selected 'food'}} value="food">Food</option>
+                              <option {{selected 'book'}} value="book">Book</option>
+                              <option {{selected 'vehicle'}} value="vehicle">Vehicle</option>
+                              <option {{selected 'houseWare'}} value="houseWare">HouseWare</option>
+                              <option {{selected 'beverage'}} value="beverage">Beverage</option>
+                              <option {{selected 'beautyCare'}} value="beautyCare">BeautyCare</option>
+                              <option {{selected 'staionery'}} value="staionery">Staionery</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                              <label>Quantity</label>
+                              <input  class="form-control" type="number" name="amount" value="{{item.curAmount}}">
+                          </div>
+                          <div class="form-group">
+                              <label>Image</label>
+                              <input type="file" name="image" class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+                </form>
             </div>
         </div>
     </div>
 </template>
+
 <template name="editStatus">
     <div class="modal fade" id="editStatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                    <h4 class="modal-title" id="myModalLabel">Edit post's status</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="form-group">
-                            <label>Status</label>
-                            <input class="form-control" type="text" name="status">
+                            <label>Content</label>
+                            <input class="form-control" type="text" name="content" value="{{content}}">
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button id="edit-post-content-btn" type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>

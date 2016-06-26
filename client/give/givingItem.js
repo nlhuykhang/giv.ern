@@ -1,8 +1,7 @@
-/**
- * Created by boc on 25/06/2016.
- */
-
-Template.announce.helpers({
+Template.givingItem.helpers({
+  isDone() {
+    return this.status === 'deactive' || this.status === 'completed';
+  },
   user() {
     return Meteor.users.findOne({
       _id: this.userId
@@ -39,14 +38,18 @@ Template.announce.helpers({
   }
 });
 
-Template.announce.events({
+Template.givingItem.events({
+  'click #edit-post-status': function(e, t) {
+    editPostId.set(this._id);
+    $('#editStatus').modal('show');
+  },
   'click .button-show-more': function(e, t) {
     $(t.find('.detail-info')).toggleClass('hidden');
   },
   'click .request-btn': function(e, t) {
     const items = [];
     t.$('.item-container').each(function(i, el) {
-      if ($(el).hasClass('selected')) {
+      if ($(el).find('.giving').hasClass('selected')) {
         if (parseInt($(el).find('input').val()) > 0) {
           items.push({
             itemId: $(el).data('id'),
@@ -57,18 +60,18 @@ Template.announce.events({
     });
 
     if (items.length > 0) {
-      const transactionId = Transaction.insert({
+      const proposalId = Proposal.insert({
         postId: this._id,
         giverId: this.userId,
         takerId: Meteor.userId(),
-        status: 'onprogress',
+        status: 'request',
         createdAt: new Date(),
       });
 
       items.forEach(function({itemId, amount}) {
-        Transaction2Item.insert({
+        Proposal2Item.insert({
           itemId,
-          transactionId,
+          proposalId,
           amount,
         });
       });
@@ -77,59 +80,5 @@ Template.announce.events({
       // TODO: show error here
       alert('can not request')
     }
-  },
-});
-
-Template.item.helpers({
-  requestUsers() {
-
-    const p2i = Proposal2Item.find({
-      itemId: this._id,
-    }).map(({proposalId}) => proposalId);
-
-    const t2i = Transaction2Item.find({
-      itemId: this._id,
-    }).map(({transactionId}) => transactionId);
-
-    const proposals = Proposal.find({
-      _id: {
-        $in: p2i,
-      },
-      status: 'request',
-    }).map(({takerId}) => takerId);
-
-    const transaction = Transaction.find({
-      _id: {
-        $in: t2i
-      },
-      status: 'onprogress',
-    }).map(({takerId}) => takerId);
-
-    const userIds = _.union(proposals, transaction);
-
-    return Meteor.users.find({
-      _id: {
-        $in: userIds
-      }
-    });
-  }
-});
-
-Template.item.events({
-  'click .item-container': function(e, t) {
-    $(t.find('.item-container')).toggleClass('selected');
-  },
-  'click .quantity input': function(e) {
-    return false;
-  },
-  'change .quantity input': function(e, t) {
-    if (parseInt(e.target.value) > this.curAmount) {
-      e.target.value = this.curAmount;
-    }
-  },
-  'click .edit-item-icon img': function() {
-    editItemId.set(this._id);
-    $('#editModal').modal('show');
-    return false;
   },
 });

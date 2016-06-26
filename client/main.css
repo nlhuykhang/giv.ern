@@ -69,6 +69,10 @@ body {
     cursor: pointer;
     border-bottom: white 4px solid;
 }
+
+.nav-items a {
+  color: white;
+}
 .navbar-items {
   text-align: center;
 }
@@ -107,6 +111,14 @@ body {
     border: none;
     color: #e3632d;
  }
+
+ .edit-item-icon {
+     position: absolute;
+     top: 60px;
+     right: 15px;
+     width: 20px;
+ }
+
  .main-info .info {
    display: -webkit-box;
  }
@@ -348,8 +360,9 @@ body {
 .recent-action {
     text-align: left;
 }
-.done {
-    background: red;
+.info .done {
+  background: red;
+  font-size: 13px;
 }
 .custom-class{
     width: 100%;
