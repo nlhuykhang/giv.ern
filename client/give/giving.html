@@ -140,18 +140,28 @@
                     <div class="row">
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control" type="text" name="name"
-                                value="{{user.profile.firstName}}{{user.profile.lastName}}"
-                            >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="firstName"
+                                           value="{{user.profile.firstName}}"
+                                    >
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" name="lastName"
+                                           value="{{user.profile.lastName}}"
+                                    >
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
                             <input class="form-control" type="text"
+                                   readonly
                                    value={{email}}
                             >
                         </div>
                         <div class="form-group">
-                            <label>Address</label><input  class="form-control" type="number" name="quantity"
+                            <label>Address</label><input  class="form-control" type="text" name="address"
                         value={{user.profile.address}}
                         >
                         </div>

@@ -2,6 +2,7 @@ Template.profile.helpers({
     user: function () {
         return Meteor.user();
     },
+
     follow: function () {
         if(Meteor.user()){
             return {
@@ -10,15 +11,35 @@ Template.profile.helpers({
                 thanks: Meteor.user().profile.thanks?Meteor.user().profile.thanks.length: 0,
             }
         }
+    },
+    email: function () {
+        if(Meteor.user) {
+            return Meteor.user().emails[0].address;
+        }
     }
 })
 Template.editProfile.helpers({
     user: function () {
         return Meteor.user();
     },
+    email: function () {
+        if(Meteor.user) {
+            return Meteor.user().emails[0].address;
+        }
+    }
 })
 Template.editProfile.events({
-    '#updateProfile': function () {
-        console.log('a')
+    'click #updateProfile': function () {
+        Meteor.users.update(Meteor.userId(), {$set:{
+            'profile.firstName': $('input[name=firstName]').val(),
+            'profile.lastName': $('input[name=lastName]').val(),
+            'profile.description':$('input[name=description]').val(),
+            'profile.phone':$('input[name=phone]').val(),
+            'profile.address':$('input[name=address]').val(),
+        }}, function (e) {
+            if(!e){
+                $('#editProfile').modal('hide')
+            }
+        })
     }
 })
