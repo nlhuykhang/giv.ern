@@ -4,24 +4,32 @@
             MY PROFILE
         </div>
         <div class="t-avatar">
-            <img src="img/hands.jpg" alt="">
+            <img src="{{user.profile.avatar}}" alt="">
         </div>
-        <div class="profile-name">Ha Truong</div>
-        <div class="btn-follow">
-            follow
-        </div>
+        <div class="profile-name">{{user.profile.firstName}}&nbsp;{{user.profile.lastName}}</div>
+        {{#if isOwner}}
+            {{#if isFollowed}}
+                <div class="btn-follow">
+                    followed
+                </div>
+            {{else}}
+                <div class="btn-follow" id="un-follow">
+                    follow
+                </div>
+            {{/if}}
+        {{/if}}
         <div class="row">
             <div class="col-md-4 border-right">
-                <div class="count">114</div>
+                <div class="count">{{follow.thanks}}</div>
                 <div class="type">Thanks</div>
             </div>
             <div class="col-md-4 border-right">
-                <div class="count">114</div>
-                <div class="type">Thanks</div>
+                <div class="count">{{follow.er}}</div>
+                <div class="type">Follower</div>
             </div>
             <div class="col-md-4">
-                <div class="count">114</div>
-                <div class="type">Thanks</div>
+                <div class="count">{{follow.ing}}</div>
+                <div class="type">Following</div>
             </div>
         </div>
         <div class="text-center media">
@@ -32,22 +40,21 @@
         <div class="info-item">
             <div class="yellow-brick">
                 <div class="round-img">
-                    <img src="img/hands.jpg" alt="">
+                    <img src="/img/look-up.svg" alt="">
                 </div>
             </div>
             <div class="info-content">
                 <ul>
-                    <li>57 Le thi hong</li>
-                    <li>quocnguyen@gmail.com</li>
-                    <li>012331222</li>
-                    <li>description</li>
+                    <li>{{user.profile.address}}</li>
+                    <li>{{user.profile.phone}}</li>
+                    <li>{{user.profile.description}}</li>
                 </ul>
             </div>
         </div>
         <div class="info-item">
             <div class="yellow-brick">
                 <div class="round-img">
-                    <img src="img/hands.jpg" alt="">
+                    <img src="/img/activity-icon.svg" alt="">
                 </div>
             </div>
             <div class="info-content">

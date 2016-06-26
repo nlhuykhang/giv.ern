@@ -7,24 +7,25 @@
     <div class="nav-bar container">
         <div class="row">
           <div class="col-md-1 navbar-items">
-            <div class="nav-items">
-              <a href="/">Explore</a>
-            </div>
+            <div class="nav-items"><a href="/">Explore</a></div>
           </div>
           <div class="col-md-2 navbar-items">
-            <div class="nav-items">
-              <a href="/giving">Give a hand</a>
-            </div>
+            <div class="nav-items"><a href="/giving">Giving</a></div>
           </div>
           <div class="col-md-2 navbar-items">
-            <div class="nav-items">History</div>
+            <div class="nav-items"><a href="/trans">Transaction</a></div>
           </div>
           <div class="col-md-5"></div>
           <div class="col-md-1">
-            <div class="nav-items navbar-items">Avatar</div>
+            <div class="right-side-custom">
+            <div class="r-avatar">
+                <img src="{{user.profile.avatar}}" alt="">
+            </div>
+                <div class="notification">{{counter}}3</div>
+            </div>
           </div>
           <div class="col-md-1">
-            <div class="nav-items navbar-items">Notification</div>
+            <div class="navbar-items">Notification</div>
           </div>
         </div>
     </div>
