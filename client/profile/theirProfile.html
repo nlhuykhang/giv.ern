@@ -8,6 +8,7 @@
         </div>
         <div class="profile-name">{{user.profile.firstName}}&nbsp;{{user.profile.lastName}}</div>
         {{#if isOwner}}
+            {{else}}
             {{#if isFollowed}}
                 <div class="btn-follow">
                     followed
