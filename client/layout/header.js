@@ -4,10 +4,17 @@ Template.header.helpers({
             return Meteor.user();
         }
     },
+    counter: function () {
+        if(Meteor.user()) {
+            const noti = Noti.find({userId: Meteor.userId()}).fetch();
+            if(noti.length > 0){
+                return noti.length;
+            }
+        }
+    },
     noti: function () {
         if(Meteor.user()){
             const noti = Noti.find({userId: Meteor.userId()}).fetch();
-
             if(noti.length){
                 const noties = _.map(noti, function (item) {
                     const user = Meteor.users.findOne({_id:item.info.userId});
