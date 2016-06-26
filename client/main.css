@@ -91,6 +91,9 @@ body {
      font-size: 20px;
      background: white;
  }
+ .post textarea {
+   outline: none;
+ }
  .edit-icon {
      position: absolute;
      top: -35px;
@@ -193,9 +196,20 @@ body {
   background: yellow;
 }
 .more-info{
-    background: yellow;
     border-radius: 0px 0px 12px 12px;
-    padding: 13px;
+    padding: 23px 12px 60px;
+}
+.more-info .get-info-btn {
+  float: left;
+  color: #e3632d;
+  font-size: 16px;
+}
+.more-info .get-info-btn:hover {
+  background: #fff;
+  color: #e3632d;
+}
+.more-info .get-info-btn#give-btn {
+  margin-left: 20px;
 }
 .row.selected .giving{
     width: 16.66667%;
