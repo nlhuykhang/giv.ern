@@ -3,10 +3,12 @@ Template.profile.helpers({
         return Meteor.user();
     },
     follow: function () {
-        return {
-            er: Meteor.user().profile.follower.length,
-            ing: Meteor.user().profile.following.length,
-            thanks: Meteor.user().profile.thanks.length,
+        if(Meteor.user()){
+            return {
+                er: Meteor.user().profile.follower?Meteor.user().profile.follower.length:0,
+                ing: Meteor.user().profile.following?Meteor.user().profile.following.length: 0,
+                thanks: Meteor.user().profile.thanks?Meteor.user().profile.thanks.length: 0,
+            }
         }
     }
 })
@@ -17,6 +19,6 @@ Template.editProfile.helpers({
 })
 Template.editProfile.events({
     '#updateProfile': function () {
-        console.log($('#name']).val());
+        console.log('a')
     }
 })
