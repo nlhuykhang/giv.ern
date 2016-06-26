@@ -16,17 +16,35 @@
             <div class="nav-items"><a href="/trans">Transaction</a></div>
           </div>
           <div class="col-md-5"></div>
-          <div class="col-md-1">
-            <div class="right-side-custom">
-            <div class="r-avatar">
-                <img src="{{user.profile.avatar}}" alt="">
+            <div class="col-md-1">
+                <div class="dropdown">
+                    <div class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><div class="right-side-custom">
+                        <div class="r-avatar">
+                            <img src="/img/bell.svg" alt="">
+                        </div>
+                        <div class="notification">{{counter}}3</div>
+                    </div></div>
+                    <ul class="dropdown-menu noti-menu">
+                        {{#each noti}}
+                            <li><a href="/{{this.link}}">{{this.text}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
             </div>
-                <div class="notification">{{counter}}3</div>
-            </div>
-          </div>
           <div class="col-md-1">
-            <div class="navbar-items">Notification</div>
+              <div class="dropdown">
+                  <div class="dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"><div class="right-side-custom">
+                      <div class="r-avatar">
+                          <img src="{{user.profile.avatar}}" alt="">
+                      </div>
+                  </div></div>
+                  <ul class="dropdown-menu ">
+                      <li><a href="/profile">Profile</a></li>
+                      <li><a href="#">Logout</a></li>
+                  </ul>
+              </div>
           </div>
+
         </div>
     </div>
 </div>
