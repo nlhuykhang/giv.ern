@@ -1,6 +1,6 @@
 <template name="transaction">
     <div class="ts-container">
-        <div class="row">
+        <div class="row headline">
             <div class="col-md-5">
                 <div class="t-avatar">
                     <img src="img/hands.jpg" alt="">
@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-2">
                 <div class="t-avatar">
-                    <img src="img/hands.jpg" alt="">
+                    <img src="img/hand-icon-color.svg" alt="">
                 </div>
             </div>
             <div class="col-md-5">
@@ -36,11 +36,22 @@
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <div class="get-info-btn no-inline text-center" id="chat">Message</div> <br />
-                <textarea name="message" id="" cols="30" rows="3"></textarea>
-                <div class="get-info-btn no-inline text-center" id="call">Call</div><br />
-                <div class="get-info-btn no-inline text-center" id="finish">Finish</div><br />
-                <div class="get-info-btn no-inline text-center" id="thank">Say Thank</div>
+                <div class="group-button-deal">
+                  <div class="get-info-btn no-inline text-center" data-toggle="collapse" data-target="#chatbox" id="chat">Message</div>
+                  <div class="get-info-btn no-inline text-center" data-toggle="collapse" data-target="#call-info" id="call">Call</div>
+                  <div id="chatbox" class="collapse">
+                    <div class="chat-size"></div>
+                  </div>
+                  <div id="call-info" class="collapse">
+                    <div class="call-number">
+                      094 732 197
+                    </div>
+                  </div>
+                </div>
+                <div class="group-button-finish">
+                  <div class="get-info-btn no-inline text-center" id="finish">Finish</div>
+                  <div class="get-info-btn no-inline text-center" id="thank">Say Thank</div>
+                </div>
             </div>
         </div>
     </div>
@@ -56,8 +67,8 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div>ban gay chan</div>
-                <div>quantity: 4</div>
+                <div class="item-name">ban gay chan</div>
+                <div class="item-quality">quantity: <span class="number">4</span></div>
             </div>
         </div>
     </div>
