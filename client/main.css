@@ -433,6 +433,17 @@ body {
     padding-top: 10px;
     font-family: 'proxima-bold';
     padding-bottom: 25px;
+    margin: 5px 0 26px;
+}
+.social-point {
+  margin: 5px 0 30px;
+}
+.social-network {
+  margin: 45px 0 30px;
+}
+.social-network img {
+  width: 30px;
+  margin: 0 7px;
 }
 .title{
     font-size: 31px;
@@ -444,14 +455,15 @@ body {
     border-right: 2px solid black;
 }
 .profile-detail{
-    margin: 40px 50px;
+    margin: 40px 100px;
 }
 .yellow-brick{
     background: #fbd14b;
     display: inline-block;
-    width: 150px;
+    width: 350px;
     border-radius: 12px 0px 0px 12px;
     height: inherit;
+    text-align: center;
 }
 .info-content {
     vertical-align: top;
@@ -460,6 +472,9 @@ body {
     font-size: 20px;
     font-family: 'proxima-light';
 }
+.info-content .row {
+  margin: 0 40px;
+}
 .info-content li {
     padding-top: 20px;
 }
@@ -467,15 +482,16 @@ body {
     height: 350px;
     margin-top: 30px;
     background: #ececec;
+    border-radius: 15px;
+}
+.info-item .look-up {
+  width: 700px;
 }
 .round-img img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 83px;
 }
 .round-img {
-    padding-top: 146px;
-    padding-left: 44px;
+    padding-top: 130px;
 }
 .media {
     padding: 25px;
